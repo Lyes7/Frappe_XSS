@@ -22,3 +22,4 @@ _Additional method to retrieve SID:_
 _This vulnerability poses a significant security risk, allowing an attacker with low privileges to compromise an admin's session. The attacker can run arbitrary code, potentially gaining unauthorized access to sensitive information and performing actions on behalf of the admin._
 
 _This report emphasizes the importance of securely handling attachments marked as Public and underscores the need for enhanced validation and filtering of file attachments._
+
